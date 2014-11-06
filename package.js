@@ -1,7 +1,7 @@
 Package.describe({
     name: 'msamoylov:foursquare',
     summary: "Foursquare OAuth flow",
-    version: "1.0.1",
+    version: "1.0.2",
     git: "https://github.com/msamoylov/foursquare.git"
 });
 
