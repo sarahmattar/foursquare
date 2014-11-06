@@ -1,0 +1,22 @@
+<template name="configureLoginServiceDialogForFoursquare">
+    <p>
+        First, you'll need to register your app on Foursquare. Follow these steps:
+    </p>
+    <ol>
+        <li>
+            Visit <a href="https://foursquare.com/developers/apps" target="_blank">https://foursquare.com/developers/apps</a>
+        </li>
+        <li>
+            Click "Create a New App".
+        </li>
+        <li>
+            Type a name, a short tagline and a description for your app.
+        </li>
+        <li>
+            Set "Download / welcome page url" to: <span class="url">{{siteUrl}}</span>.
+        </li>
+        <li>
+            Set Redirect URI to: <span class="url">{{siteUrl}}_oauth/foursquare</span>
+        </li>
+    </ol>
+</template>
