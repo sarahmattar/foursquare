@@ -1,10 +1,11 @@
 Package.describe({
     summary: "Foursquare OAuth flow",
-    version: "0.1",
+    version: "1.0.0",
     git: "https://github.com/msamoylov/foursquare.git"
 });
 
 Package.on_use(function(api) {
+    api.use('oauth', ['client', 'server']);
     api.use('oauth2', ['client', 'server']);
     api.use('http', ['server']);
     api.use('underscore', 'client');

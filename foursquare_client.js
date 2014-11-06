@@ -20,8 +20,6 @@ Foursquare.requestCredential = function (options, credentialRequestCompleteCallb
     }
 
     var credentialToken = Random.secret();
-    var mobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|Windows Phone/i.test(navigator.userAgent);
-    var display = mobile ? 'touch' : 'webpopup';
 
     var loginStyle = OAuth._loginStyle('foursquare', config, options);
 
@@ -29,11 +27,11 @@ Foursquare.requestCredential = function (options, credentialRequestCompleteCallb
         'https://foursquare.com/oauth2/authenticate' +
         '?client_id=' + config.clientId +
         '&response_type=code' +
-        '&display=' + display +
-        '&redirect_uri=' + OAuth._redirectUri('foursquare', config);
+        '&redirect_uri=' + Meteor.absoluteUrl('_oauth/foursquare') +
+        '&state=' + OAuth._stateParam(loginStyle, credentialToken);
 
     OAuth.launchLogin({
-        loginService: 'foursquare',
+        loginService: "foursquare",
         loginStyle: loginStyle,
         loginUrl: loginUrl,
         credentialRequestCompleteCallback: credentialRequestCompleteCallback,
