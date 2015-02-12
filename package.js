@@ -1,8 +1,8 @@
 Package.describe({
-    name: 'msamoylov:foursquare',
+    name: 'wehrlock:foursquare',
     summary: "Foursquare OAuth flow",
-    version: "1.0.3",
-    git: "https://github.com/msamoylov/foursquare.git"
+    version: "1.0.4",
+    git: "https://github.com/wehrlock/foursquare.git"
 });
 
 Package.on_use(function(api) {

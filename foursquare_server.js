@@ -4,18 +4,17 @@ OAuth.registerService('foursquare', 2, null, function(query) {
 
     var accessToken = getAccessToken(query);
     var identity = getIdentity(accessToken);
+    var serviceData = [
+      'id','firstName','lastName','bio','gender','photo','contact','homeCity'
+    ];
 
     return {
-        serviceData: {
-            id: identity.id,
-            accessToken: OAuth.sealSecret(accessToken),
-            email: identity.contact.email
-        },
+        serviceData: _.extend(
+          _.pick(identity, serviceData),
+          { accessToken: OAuth.sealSecret(accessToken) }
+        ),
         options: {
-            profile: {
-                firstName: identity.firstName,
-                lastName: identity.lastName
-            }
+            profile: {}
         }
     };
 });
