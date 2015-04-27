@@ -1,11 +1,12 @@
 Package.describe({
     name: 'wehrlock:foursquare',
-    summary: "Foursquare OAuth flow",
-    version: "1.0.4",
-    git: "https://github.com/wehrlock/foursquare.git"
+    summary: 'Foursquare OAuth flow',
+    version: '1.0.5',
+    git: "https://github.com/wehrlock/foursquare.git",
+    documentation: 'README.md'
 });
 
-Package.on_use(function(api) {
+Package.onUse(function (api) {
     api.versionsFrom('1.0');
     api.use('oauth', ['client', 'server']);
     api.use('oauth2', ['client', 'server']);
@@ -17,10 +18,10 @@ Package.on_use(function(api) {
 
     api.export('Foursquare');
 
-    api.add_files(
+    api.addFiles(
         ['foursquare_configure.html', 'foursquare_configure.js'],
         'client');
 
-    api.add_files('foursquare_server.js', 'server');
-    api.add_files('foursquare_client.js', 'client');
+    api.addFiles('foursquare_server.js', 'server');
+    api.addFiles('foursquare_client.js', 'client');
 });
